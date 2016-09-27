@@ -3,7 +3,7 @@
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://dimplejs.org/dist/dimple.v2.2.0.min.js"></script>
   <script type="text/javascript">
-    var svg = dimple.newSvg("#chartContainer", 1500, 1500);
+    var svg = dimple.newSvg("#chartContainer", 1300, 620);
 	//var svg = dimple.newSvg("#chartContainer", 590, 400);
       d3.csv("gdp_internet.csv", function (data) {
         // Latest period only
@@ -12,7 +12,8 @@
         var myChart = new dimple.chart(svg, data);
 		//myChart.setBounds(60, 30, 420, 330)
         //myChart.setBounds(50, 50, 1520, 730)
-		myChart.setBounds(50, 40, 1000, 530)
+		//myChart.setBounds(50, 40, 1000, 530)  //old
+		myChart.setBounds(50,"100px", 1000, 530)
         // Create a standard bubble of SKUs by Price and Sales Value
         // We are coloring by Owner as that will be the key in the legend
        var y = myChart.addMeasureAxis("y", "Penetration (% of Pop)"); 
