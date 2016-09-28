@@ -3,7 +3,7 @@
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://dimplejs.org/dist/dimple.v2.2.0.min.js"></script>
   <script type="text/javascript">
-    var svg = dimple.newSvg("#chartContainer", 1300, 620);
+    var svg = dimple.newSvg("#chartContainer", 1300, 920);
 	//var svg = dimple.newSvg("#chartContainer", 590, 400);
       d3.csv("gdp_internet.csv", function (data) {
         // Latest period only
@@ -57,6 +57,22 @@
             .style("font-family", "sans-serif")
             .style("font-size", "15px")
             .text("Data source: www.internetlivestats.com, http://statisticstimes.com")
+			
+		   svg.append("text")
+            .attr("x", myChart._xPixels() + myChart._widthPixels() / 64)
+            .attr("y", myChart._yPixels()+600)
+            .style("font-family", "sans-serif")
+            .style("font-size", "15px")
+			.style("font-weight", "bold")
+            .text("GDP Per Capita: average income per person in a country")
+			
+			svg.append("text")
+            .attr("x", myChart._xPixels() + myChart._widthPixels() / 64)
+            .attr("y", myChart._yPixels()+620)
+            .style("font-family", "sans-serif")
+            .style("font-size", "15px")
+			.style("font-weight", "bold")
+            .text("Internet Penetration Percent (%): Percentage of People Using Internet")
        
         myChart.legends = [];
 
