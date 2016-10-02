@@ -79,3 +79,13 @@ I think you are almost done, few minor tweaks and you are good to go.
 Based on user comments I have have reshaped the svg to width and height of 1300 and 720 respectively, so to avoid scroll spaces. I have also added some information on what internet penetration and GDP per capita means. I have changed the population tick format so the population data is shown with comma separation. I don't want to add graph description as mentioned in some feedback, mainly because I want users to understand what I want to convey from the graph but not based on the text present in the graph.
 
 note: I have used Udacity's Data Analyst Nanodegree google plus group to get feedback for my visualization. 
+
+
+##Resources
+[1] http://dimplejs.org/
+
+[2] http://www.w3schools.com/
+
+[3] https://github.com/d3/d3-format/blob/master/README.md#format
+
+[4] https://github.com/d3/d3/blob/master/API.md#number-formats-d3-format
