@@ -24,9 +24,13 @@ one thing I will biggest is to move the data source link a little bit down so it
 ###Feedback2 (Ron Rihoo)
 
 1)What do you notice in the visualization?
+
 2)What questions do you have about the data?
+
 3)What relationships do you notice?
+
 4)What do you think is the main takeaway from this visualization?
+
 5)Is there something you don’t understand in the graphic?
 
 
