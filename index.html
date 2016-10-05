@@ -10,17 +10,17 @@
         // Create the chart
 		
         var myChart = new dimple.chart(svg, data);
-		myChart.setBounds(80, 100, 1000, 530);
+	myChart.setBounds(80, 100, 1000, 530);
         var y = myChart.addMeasureAxis("y", "Penetration (% of Pop)"); 
         var x = myChart.addMeasureAxis("x", "gdp_percapita");
-		x.title = "GDP Per Capita ($)";
-		y.title = "Internet Penetration Percent (%)";
-		y.overrideMax = 100;
-		x.overrideMax = 100000;
-		var z = myChart.addMeasureAxis("z", "population_sqrt");
-		var bubbleChart = myChart.addSeries(["Country","Continent"], dimple.plot.bubble);
-		bubbleChart.getTooltipText = function (e) {
-                return [
+	x.title = "GDP Per Capita ($)";
+	y.title = "Internet Penetration Percent (%)";
+	y.overrideMax = 100;
+	x.overrideMax = 100000;
+	var z = myChart.addMeasureAxis("z", "population_sqrt");
+	var bubbleChart = myChart.addSeries(["Country","Continent"], dimple.plot.bubble);
+	bubbleChart.getTooltipText = function (e) {
+        return [
                     "Country: " + e.aggField[0],
                     "Cotinent: " + e.aggField[1],
                     "GDP Per Capita: $" + (e.xValue).toFixed(1),
@@ -28,39 +28,39 @@
                     "Population: " + (e.zValue * e.zValue).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                 ];
         };
-		var myLegend = myChart.addLegend(1150, 200, 60, 300, "Continent");
+	var myLegend = myChart.addLegend(1150, 200, 60, 300, "Continent");
 		
-		//Add title, legend heading and explanation to x and y axis
+	//Add title, legend heading and explanation to x and y axis
 		
         myChart.draw();
-		  svg.append("text")
-			.attr("x", myChart._xPixels() + myChart._widthPixels() / 2)
-			.attr("y", myChart._yPixels() - 80)
-			.style("text-anchor", "middle")
-			.style("font-family", "sans-serif")
-			.style("font-weight", "bold")
-			.text("As Country's GDP per capita increases, the Internet penetration increases");
-		svg.append("text")
+	svg.append("text")
+	    .attr("x", myChart._xPixels() + myChart._widthPixels() / 2)
+	    .attr("y", myChart._yPixels() - 80)
+	    .style("text-anchor", "middle")
+	    .style("font-family", "sans-serif")
+	    .style("font-weight", "bold")
+	    .text("As Country's GDP per capita increases, the Internet penetration increases");
+	svg.append("text")
             .attr("x", myChart._xPixels() + myChart._widthPixels() / 2)
             .attr("y", myChart._yPixels()+500)
             .style("font-family", "sans-serif")
             .style("font-size", "15px")
             .text("Data source: www.internetlivestats.com, http://statisticstimes.com");
-		svg.append("text")
-            .attr("x", myChart._xPixels() + myChart._widthPixels() / 64)
-            .attr("y", myChart._yPixels()+580)
-            .style("font-family", "sans-serif")
-            .style("font-size", "15px")
-			.style("font-weight", "bold")
+	svg.append("text")
+           .attr("x", myChart._xPixels() + myChart._widthPixels() / 64)
+           .attr("y", myChart._yPixels()+580)
+           .style("font-family", "sans-serif")
+           .style("font-size", "15px")
+	   .style("font-weight", "bold")
             .text("GDP Per Capita: average income per person in a country");
-		svg.append("text")
+	svg.append("text")
             .attr("x", myChart._xPixels() + myChart._widthPixels() / 64)
             .attr("y", myChart._yPixels()+600)
             .style("font-family", "sans-serif")
             .style("font-size", "15px")
 			.style("font-weight", "bold")
             .text("Internet Penetration Percent (%): Percentage of People Using Internet");
-		svg.append("text")
+	svg.append("text")
             .attr("x", myChart._xPixels() + myChart._widthPixels() / 64)
             .attr("y", myChart._yPixels()+620)
             .style("font-family", "sans-serif")
@@ -79,7 +79,7 @@
             .style("color", "blue")
             .text(function (d) { return d; });
 			
-		svg.selectAll("explanatory_text")
+	svg.selectAll("explanatory_text")
             .data(["Like food, water and shelter, Internet has become one of human's necessities. Like comparing water quality and malnutrition with country's wealth, its time we start comparing internet usage with country's wealth.", 
               "From the graph we can  see  that  as  the  country's  wealth increases (GDP per capita)  internet  usage (internet penetration)  also  increases. The  richer countries  like USA, Singapore  and many  european countries ",
               "has higher internet penetration. We can clearly see continent europe has many richer countries and high internet usage, on the other hand africa has many poor countries and lower internet usage. Internet penetration",
