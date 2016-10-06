@@ -7,9 +7,9 @@
 	
 	d3.csv("gdp_internet.csv", function (data) {
  
-        	// Create the chart
+        // Create the chart
 		
-        	var myChart = new dimple.chart(svg, data);
+        var myChart = new dimple.chart(svg, data);
 		myChart.setBounds(80, 100, 1000, 530);
 		var y = myChart.addMeasureAxis("y", "Penetration (% of Pop)"); 
 		var x = myChart.addMeasureAxis("x", "gdp_percapita");
@@ -21,8 +21,8 @@
 		var bubbleChart = myChart.addSeries(["Country","Continent"], dimple.plot.bubble);
 		bubbleChart.getTooltipText = function (e) {
 		return [
-			    "Country: " + e.aggField[0],
-			    "Cotinent: " + e.aggField[1],
+	            "Country: " + e.aggField[0],
+		        "Cotinent: " + e.aggField[1],
 			    "GDP Per Capita: $" + (e.xValue).toFixed(1),
 			    "Internet Penetration: " + (e.yValue).toFixed(1)+"%",
 			    "Population: " + (e.zValue * e.zValue).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -52,26 +52,26 @@
 		   .style("font-family", "sans-serif")
 		   .style("font-size", "15px")
 		   .style("font-weight", "bold")
-		    .text("GDP Per Capita: average income per person in a country");
+		   .text("GDP Per Capita: average income per person in a country");
 		svg.append("text")
 		    .attr("x", myChart._xPixels() + myChart._widthPixels() / 64)
 		    .attr("y", myChart._yPixels()+600)
 		    .style("font-family", "sans-serif")
 		    .style("font-size", "15px")
-				.style("font-weight", "bold")
+			.style("font-weight", "bold")
 		    .text("Internet Penetration Percent (%): Percentage of People Using Internet");
 		svg.append("text")
 		    .attr("x", myChart._xPixels() + myChart._widthPixels() / 64)
 		    .attr("y", myChart._yPixels()+620)
 		    .style("font-family", "sans-serif")
 		    .style("font-size", "15px")
-				.style("font-weight", "bold")
+			.style("font-weight", "bold")
 		    .text("The size of the buble represents population of the country");
-			myChart.legends = [];
+		myChart.legends = [];
 		svg.selectAll("title_text")
-				.data(["Click legend to","show/hide Continent:"])
-				.enter()
-				.append("text")
+			.data(["Click legend to","show/hide Continent:"])
+			.enter()
+			.append("text")
 		    .attr("x", 1100)
 		    .attr("y", function (d, i) { return 170 + i * 24; })
 		    .style("font-family", "sans-serif")
@@ -83,7 +83,7 @@
 		    .data(["Like food, water and shelter, Internet has become one of human's necessities. Like comparing water quality and malnutrition with country's wealth, its time we start comparing internet usage with country's wealth.", 
 		      "From the graph we can  see  that  as  the  country's  wealth increases (GDP per capita)  internet  usage (internet penetration)  also  increases. The  richer countries  like USA, Singapore  and many  european countries ",
 		      "has higher internet penetration. We can clearly see continent europe has many richer countries and high internet usage, on the other hand africa has many poor countries and lower internet usage. Internet penetration",
-				  " refers to percent of people using internet compared to total population."])
+			  " refers to percent of people using internet compared to total population."])
 		    .enter()
 		    .append("text")
 		    .attr("x", 20)
@@ -105,11 +105,11 @@
 		    var newFilters = [];
 		    filterValues.forEach(function (f) {
 		      if (f === e.aggField.slice(-1)[0]) {
-			hide = true;
+			    hide = true;
 		      } else {
-			newFilters.push(f);
+			    newFilters.push(f);
 		      }
-				});
+			});
 
 		    // Hide the shape or show it
 
